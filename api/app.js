@@ -14,7 +14,6 @@ app.use((req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  console.log('hello');
   // 默认为失败。如果成功,不要忘记传入第二个参数0
   next()
 })
@@ -46,8 +45,12 @@ app.use((err, req, res, next) => {
 })
 
 // 调用 app.listen 方法，指定端口号并启动web服务器
-const router = require('./router')
-app.use(router)
-app.listen(8080, () => {
+const userRouter = require('./router/userRouter')
+const royalRouter = require('./router/royalRouter')
+const commentRouter = require('./router/commentRouter')
+app.use('/user', userRouter)
+app.use('/royal', royalRouter)
+app.use('/comment', commentRouter)
+app.listen(8081, () => {
   console.log('running')
 })
