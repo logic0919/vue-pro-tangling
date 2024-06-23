@@ -2,7 +2,7 @@
 import axios from 'axios'
 import router from '@/router'
 import { ElMessage } from 'element-plus'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '@/stores/modules/user'
 
 const baseURL = 'http://localhost:8081'
 
@@ -27,7 +27,7 @@ instance.interceptors.response.use(
     if (res.data.status === 0) {
       return res
     }
-    ElMessage({ message: res.data.msg || '服务异常', type: 'error' })
+    ElMessage({ message: res.data.message || '服务异常', type: 'error' })
     return Promise.reject(res.data)
   },
   (err) => {

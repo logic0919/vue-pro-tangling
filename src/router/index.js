@@ -3,6 +3,7 @@ import loginPage from '../views/loginPage.vue'
 import index from '../views/index.vue'
 import test from '../views/testPage.vue'
 import royalDetail from '../views/royalDetail.vue'
+import indexPage from '@/views/indexPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/royalDetail/:id',
       name: 'royalDetail',
       component: royalDetail
+    },
+    {
+      path: '/indexPage',
+      name: 'indexPage',
+      component: indexPage
     }
   ]
 })
