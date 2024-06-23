@@ -13,10 +13,10 @@ const getAll = (req, res) => {
             return res.cc(err)
         } else {
             res.send({
-                    status: 0,
-                    message: '信息获取成功1',
-                    data: results
-                })
+                status: 0,
+                message: '信息获取成功',
+                data: results
+            })
         }
     })
 }

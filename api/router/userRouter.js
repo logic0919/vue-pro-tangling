@@ -5,5 +5,7 @@ const handler = require('../router_handler/userHandler')
 router.post('/login', handler.login)
 // 注册
 router.post('/register', handler.register)
+// 获取用户信息
+router.get('/info', handler.info)
 
 module.exports = router
